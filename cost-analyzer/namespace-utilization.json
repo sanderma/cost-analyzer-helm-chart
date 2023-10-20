@@ -1093,9 +1093,12 @@
 				"options":[
 
 				],
-				"query":"query_result(sum(kube_namespace_created{namespace!=\"\"}) by (namespace))",
+				"query":{
+					"query": "label_values(kube_namespace_labels, namespace)",
+					"refId": "StandardVariableQuery"
+				},
 				"refresh":1,
-				"regex":"/namespace=\\\"(.*?)(\\\")/",
+				"regex":"",
 				"skipUrlSync":false,
 				"sort":0,
 				"tagValuesQuery":"",
